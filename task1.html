@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1</title>
+        <link rel=="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+        <style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+        
+        <script>
+            
+            function addRow()
+            {
+              
+                var fid = document.getElementById('fid').value;
+                 var fname = document.getElementById('fname').value;
+                  var fmail = document.getElementById('fmail').value;
+                  var fpno = document.getElementById('fpno').value;
+                  
+                  var uid=new Array();
+                  if(uid.indexOf(fid)!=-1){
+                    alert("Value exist")
+                  }
+                  else{
+                    uid.push(fid);
+                  }
+
+
+                  
+                  var table = document.getElementsByTagName('table')[0];
+                  
+                  
+                  var newRow = table.insertRow(1);
+                  var Cbutton = document.createElement("BUTTON");
+                  
+                  
+                  var cel1 = newRow.insertCell(0);
+                  var cel2 = newRow.insertCell(1);
+                  var cel3 = newRow.insertCell(2);
+                  var cel4 = newRow.insertCell(3);
+                  var cel5 = newRow.insertCell(4);
+                  
+                  cel1.innerHTML = fid;
+                  cel2.innerHTML = fname;
+                  cel3.innerHTML = fmail;
+                  cel4.innerHTML=fpno;
+                  cel5.innerHTML = Cbutton;
+            }
+            
+
+            function remove(y){
+              e=y.rowIndex;
+              document.getElementById("t1").deleteRow(e);
+
+
+
+            }
+        </script>
+        
+    </head>
+
+    <body>
+      <div id="main">
+      <div id="form">
+        
+        ID: <input type="text" name="id" id="fid" /><br/><br/>
+        Name: <input type="text" name="name" id="fname" /><br/><br/>
+        Email: <input type="text" name="mail" id="fmail" /><br/><br/>
+        Phone No: <input type="text" name="phno" id="fpno" /><br/><br/>
+        <button onclick="addRow();">Add Row</button><br/><br/>
+      </div>
+      <div id="tabl">
+
+        <table id="t1" border="1">
+            
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phno</th>
+                <th>Action</th>
+            </tr>
+            
+            
+            
+        </table>
+      </div>
+    </div>
+
+    </body>
+
+
+</html>
